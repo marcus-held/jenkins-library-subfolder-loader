@@ -1,0 +1,39 @@
+plugins {
+  id "com.mkobit.jenkins.pipelines.shared-library" version "0.10.1"
+}
+
+repositories {
+  jcenter()
+  mavenLocal()
+}
+
+configurations {
+  all {
+    exclude group: 'org.slf4j', module: 'slf4j-jdk14'
+    resolutionStrategy {
+      force 'com.ibm.icu:icu4j:65.1'
+    }
+  }
+}
+
+java {
+  sourceCompatibility = JavaVersion.VERSION_1_8
+}
+
+sharedLibrary {
+  coreVersion = "2.201"
+  pluginDependencies {
+    dependency("org.jenkins-ci.plugins", "pipeline-build-step", "2.8")
+    dependency("org.6wind.jenkins", "lockable-resources", "2.5")
+
+    dependency("org.eclipse.hudson.plugins", "git", "3.0.1")
+    dependency("org.jenkinsci.plugins", "pipeline-model-api", "1.3.9")
+    dependency("org.jenkinsci.plugins", "pipeline-model-declarative-agent", "1.1.1")
+    dependency("org.jenkinsci.plugins", "pipeline-model-definition", "1.3.9")
+    dependency("org.jenkinsci.plugins", "pipeline-model-extensions", "1.3.9")
+    dependency("org.jenkins-ci.plugins.workflow", "workflow-step-api", "2.20")
+    dependency("org.jenkins-ci.plugins.workflow", "workflow-cps", "2.74")
+    dependency("com.cloudbees", "groovy-cps", "1.31")
+    dependency("org.jenkins-ci", "symbol-annotation", "1.17")
+  }
+}
