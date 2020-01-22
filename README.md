@@ -4,7 +4,7 @@
 
 This project is a small shared library for Jenkins that offers a [loadLocalLibrary](vars/loadLocalLibrary.groovy) step which loads a library from a subfolder in the repository.
 
-The details on how the library works is explained in [this blog post](https://www.code-held.com/2020/01/21/jenkins-local-shared-library/).
+The details on how the library works is explained in [this blog post](https://www.code-held.com/2020/01/22/jenkins-local-shared-library/).
 
 ## How to use
 
